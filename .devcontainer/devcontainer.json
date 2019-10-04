@@ -1,5 +1,5 @@
 {
-    "name": "Node.js Sample",
+    "name": "NodeTSDevContainer",
     "dockerFile": "Dockerfile",
     // Specifies a list of ports that should be published.
     "appPort": [
