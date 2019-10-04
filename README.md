@@ -28,13 +28,23 @@ This prevents one's local VSCode configuration being affected by the required ex
 
 <!--TODO-->
 
+After cloning the project, open it in VS Code:
+
+`cd %REPO% && code .`
+
+`extensions.json` will cause VS Code to suggest you install the [Remote - Containers extension](), which allows you to remote into the dev container similar to the experience of editing code in a remote VM. Click "install".
+
+You can also find this extension in the VS Code marketplace under `ms-vscode-remote.remote-containers`.
+
+<!--Complete this section for using dev container in VS Code. -->
+
 ## Usage - without the VSCode "Remote - Containers" extension
 
-<!--TODO - add script to do all the volume mounting and hard work-->
+<!--TODO - add script to do all the volume mounting and hard work, test, and explain usage here. -->
 
 ### Using VS Code Live Share within the Dev Container
 
-<!--TODO (remember need to generate and use code on sign-in, linking to issue)-->
+<!--TODO (remember need to generate and use code on sign-in, linking to issue recommending this). -->
 
 ## Contributing
 
