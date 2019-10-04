@@ -21,6 +21,8 @@ RUN apt-get update \
     && apt-get -y install git iproute2 procps lsb-release \
     # Install node - TODO: pin to specific versions
     && apt-get -y install nodejs npm \
+    #Install Typescript
+    && npm install -g typescript \
     # Install Docker on image for use with target runtime env
     && apt-get -y install docker.io \
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
@@ -30,14 +32,13 @@ RUN apt-get update \
     && apt-get install -y sudo \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME\
     && chmod 0440 /etc/sudoers.d/$USERNAME \
-    #
     # Clean up
     && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
 
-#TODO: Install Docker and set up basic alpine image on host machine
+    #TODO: set up basic alpine image on host machine
 
-# Switch back to dialog for any ad-hoc use of apt-get
-ENV DEBIAN_FRONTEND=
+    # Switch back to dialog for any ad-hoc use of apt-get
+    ENV DEBIAN_FRONTEND=
 #ENTRYPOINT /bin/bash <-- How to shell into dev container without VSCode

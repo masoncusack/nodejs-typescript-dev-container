@@ -9,7 +9,7 @@
     // Dockerfile with your user's UID/GID if not 1000.
     "runArgs": [
         "-u",
-        "node"
+        "vscode"
     ],
     // Use 'settings' to set *default* container specific settings.json values on container create. 
     // You can edit these settings after create using File > Preferences > Settings > Remote.
@@ -19,6 +19,7 @@
     // Specifies a command that should be run after the container has been created.
     "postCreateCommand": "npm install",
     "extensions": [
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "ms-vsliveshare.vsliveshare"
     ]
 }
