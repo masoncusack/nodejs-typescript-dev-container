@@ -22,19 +22,19 @@ The config information in `.devcontainer/devcontainer.json` then standardises th
 - ESlint extension
 - VSCode live share extension
 
-This prevents one's local VSCode configuration being affected by the required extensions for a particular project.
+This prevents one's local VSCode configuration being affected by the required extensions for a particular project. Note: your personal visual/aesthetic configuration will persist across local and dev container VSCode sessions.
 
 ## Usage - with the VSCode "Remote - Containers" extension (recommended)
 
-TODO
+<!--TODO-->
 
-## Usage - without the VSCode "Remote - Containers" extension (recommended)
+## Usage - without the VSCode "Remote - Containers" extension
 
-TODO
+<!--TODO - add script to do all the volume mounting and hard work-->
 
 ### Using VS Code Live Share within the Dev Container
 
-TODO (remember need to generate and use code on sign-in, linking to issue)
+<!--TODO (remember need to generate and use code on sign-in, linking to issue)-->
 
 ## Contributing
 
