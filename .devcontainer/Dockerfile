@@ -1,6 +1,7 @@
 FROM ubuntu:bionic
 
-#Copying local code in volume to image: docker run -it -v $(pwd):/src example:dev
+#Building dev container image manually from root: docker built -f .devcontainer/Dockerfile -t <name:tag> .
+#Copying local code via volume to running image: docker run -it -v $(pwd):/src example:dev
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
@@ -35,7 +36,7 @@ RUN apt-get update \
     # Clean up
     && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /var/lib/apt/lists/*
 
     #TODO: set up basic alpine image on host machine
 
