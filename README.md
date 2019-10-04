@@ -1,69 +1,41 @@
-# RUN ./configure.js after cloning before true initial commit to new project
+# Node/TS Container
 
-# %%REPO_NAME%%
-
-%%REPO_DESC%%
-
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/bengreenier/%%REPO_NAME%%)
+A VSCode Dev Container environment for Node.js + Typescript
 
 ![project logo](./.github/logo.png)
 
-This project provides %%REPO_README_INFO%%
+This project provides a basis for collaborative development of Node.js projects, using Typescript, within a development container. It takes advantage of VSCode integration with the [Remote - Containers extension](https://code.visualstudio.com/docs/remote/containers).
 
-## Getting started
+The idea of development containers is to require as little dependency installation as as possible on one's local system, and also to make the development environment consistent and predictable across a team running different operating systems.
 
-This repo is set up using [typescript](http://www.typescriptlang.org/), [eslint](https://eslint.org/), [prettier](https://prettier.io/), and [jest](https://jestjs.io/) to ensure quality and usability are top of mind. There's some great tooling for leveraging these things:
+This implementation automates and standardises the installation of:
 
-- [VS Code](https://code.visualstudio.com/)
-- [Extension: Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [Extension: Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- Node.js 
+- npm
+- Typescript
+- Docker
 
-To run the tests or examples, follow these steps:
+...on the dev container when its image is built (via `.devcontainer/Dockerfile`).
 
-- Install [Git](https://git-scm.com/)
-- Install [Node + NPM](https://nodejs.org/en/)
-- Clone this repository
+The config information in `.devcontainer/devcontainer.json` then standardises the VS code experience when running the development container with:
 
-```
-git clone %%REPO_URL%%
-```
+- ESlint extension
+- VSCode live share extension
 
-- Enter the created directory
+This prevents one's local VSCode configuration being affected by the required extensions for a particular project.
 
-```
-cd %%REPO_NAME%%
-```
+## Usage - with the VSCode "Remote - Containers" extension (recommended)
 
-- Install dependencies
+TODO
 
-```
-npm install
-```
+## Usage - without the VSCode "Remote - Containers" extension (recommended)
 
-- Build the source
+TODO
 
-```
-npm run build
-```
+### Using VS Code Live Share within the Dev Container
 
-- Run the tests
-
-```
-npm test
-```
-
-- Run the examples
-
-```
-npm start
-```
-
-### Binary Releases
-
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/bengreenier/%%REPO_NAME%%)
-
-To simplify cases when one might simply want to run the examples without needing to build the source,binary releases are provided for Windows, Mac, and Linux on the [Releases Page](https://github.com/bengreenier/%%REPO_NAME%%/releases/latest).
+TODO (remember need to generate and use code on sign-in, linking to issue)
 
 ## Contributing
 
-Open a PR against this repository, or create an Issue.
+Feel free to open a PR against this repository, or create an Issue.

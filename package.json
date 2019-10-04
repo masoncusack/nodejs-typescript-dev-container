@@ -1,7 +1,7 @@
 {
-  "name": "%%REPO_NAME%%",
+  "name": "nodetscontainer",
   "version": "1.0.0-alpha",
-  "description": "%%REPO_DESC%%",
+  "description": "A VSCode Dev Container environment for Node.js + Typescript",
   "main": "dist/lib/index.js",
   "bin": "dist/index.js",
   "scripts": {
