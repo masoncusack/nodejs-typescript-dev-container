@@ -10,11 +10,17 @@
     "lint": "eslint **/*.ts",
     "build": "tsc -p .",
     "dist": "npm run build && pkg --out-path bin .",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "watch": "tsc -w",
+    "ci": "npm run build && npm run lint && npm run test"
   },
   "jest": {
+    "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/src/**/*.ts"
+      "**/src/**/*.ts",
+      "!coverage/**",
+      "!**/node_modules/**",
+      "!__tests__/**"
     ],
     "coverageReporters": [
       "cobertura",

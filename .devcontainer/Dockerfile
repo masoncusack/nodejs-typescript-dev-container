@@ -21,6 +21,8 @@ RUN apt-get update \
     && apt-get -y install git iproute2 procps lsb-release \
     # Install node - TODO: pin to specific versions
     && apt-get -y install nodejs npm \
+    # Install Docker on image for use with target runtime env
+    && apt-get -y install docker.io \
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
     && groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
