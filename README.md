@@ -31,7 +31,7 @@ Pinning these to the dev container prevents one's local VS Code configuration be
 
 After cloning the project, open it in VS Code:
 
-`cd ./Node.js-Typescript-development-container && code .`
+`cd ./nodejs-typescript-dev-container && code .`
 
 VS Code will then suggest you install the 'extension recommendations'.
 
