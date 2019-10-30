@@ -1,6 +1,7 @@
 # Manual rules
 dist/
 bin/
+.DS_Store
 # End Manual rules
 
 # Created by https://www.gitignore.io/api/node

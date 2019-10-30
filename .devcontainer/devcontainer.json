@@ -1,5 +1,5 @@
 {
-    "name": "NodeTSDevContainer",
+    "name": "QueryExecutorContainer",
     "dockerFile": "Dockerfile",
     // Specifies a list of ports that should be published.
     "appPort": [
@@ -20,6 +20,8 @@
     "postCreateCommand": "npm install",
     "extensions": [
         "dbaeumer.vscode-eslint",
-        "ms-vsliveshare.vsliveshare"
+        "davidanson.vscode-markdownlint",
+        "ms-vsliveshare.vsliveshare",
+        "ms-azuretools.vscode-docker"
     ]
 }

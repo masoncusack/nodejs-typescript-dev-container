@@ -17,29 +17,29 @@ ARG USER_GID=$USER_UID
 # Configure apt and install packages
 RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
-    #
     # Verify git, process tools, lsb-release (common in install instructions for CLIs) installed
     && apt-get -y install git iproute2 procps lsb-release \
-    # Install node - TODO: pin to specific versions
-    && apt-get -y install nodejs npm \
-    #Install Typescript
-    && npm install -g typescript \
-    # Install Docker on image for use with target runtime env
-    && apt-get -y install docker.io \
-    # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
-    && groupadd --gid $USER_GID $USERNAME \
-    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    # Install curl
+    && apt-get -y install curl \
+    # Install nodejs and npm (recommended releases)
+    && curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+    && apt-get -y install nodejs \
     # [Optional] Add sudo support for the non-root user
-    && apt-get install -y sudo \
+    && apt-get -y install sudo \
+    # Add VS Code Live Share .NET Core native dependencies as documented at https://docs.microsoft.com/en-us/visualstudio/liveshare/reference/linux#debian--ubuntu
+    && apt install -y libssl1.0.0 libkrb5-3 zlib1g libicu[0-9][0-9] gnome-keyring libsecret-1-0 desktop-file-utils x11-utils
+
+# Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME\
-    && chmod 0440 /etc/sudoers.d/$USERNAME \
-    # Clean up
-    && apt-get autoremove -y \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
+
+# Clean up
+RUN apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-    #TODO: set up basic alpine image on host machine
-
-    # Switch back to dialog for any ad-hoc use of apt-get
-    ENV DEBIAN_FRONTEND=
+# Switch back to dialog for any ad-hoc use of apt-get
+ENV DEBIAN_FRONTEND=
 #ENTRYPOINT /bin/bash <-- How to shell into dev container without VSCode

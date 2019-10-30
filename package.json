@@ -1,5 +1,5 @@
 {
-  "name": "nodetscontainer",
+  "name": "query_executor",
   "version": "1.0.0-alpha",
   "description": "A VSCode Dev Container environment for Node.js + Typescript",
   "main": "dist/lib/index.js",
@@ -10,7 +10,8 @@
     "lint": "eslint **/*.ts",
     "build": "tsc -p .",
     "dist": "npm run build && pkg --out-path bin .",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "prune": "npm prune --production"
   },
   "jest": {
     "collectCoverage": true,
@@ -26,11 +27,12 @@
     ],
     "preset": "ts-jest"
   },
-  "author": "Ben Greenier",
-  "license": "MIT",
+  "author": "DevCrew-UK-2",
+  "license": "UNLICENSED",
   "devDependencies": {
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.11",
+    "@types/supertest": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "^2.1.0",
     "@typescript-eslint/parser": "^2.1.0",
     "eslint": "^6.3.0",
@@ -41,6 +43,7 @@
     "jest": "^24.9.0",
     "pkg": "^4.4.0",
     "prettier": "^1.18.2",
+    "supertest": "^4.0.2",
     "ts-jest": "^24.1.0",
     "typescript": "3.5.x"
   },

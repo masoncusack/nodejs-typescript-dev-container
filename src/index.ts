@@ -1,10 +1,15 @@
-import * as http from "http";
-import template from "./lib";
+import * as http from 'http'
 
-// tslint:disable-next-line: no-console
-console.log(`Hello ${template.hello}! Try echo server: \n` +
-    "curl -d 'echo test' -X POST http://localhost:8080");
+// Workaround for ctrl-c when running in Docker
+process.on('SIGINT', () => process.exit(1))
 
-http.createServer((req, res) => {
-    req.pipe(res);
-}).listen(8080);
+// eslint-disable-next-line no-console
+console.log(`Hello world! Try echo server: \ncurl -d 'echo test' -X POST http://localhost:8080`)
+
+const Server = http
+  .createServer((req, res) => {
+    req.pipe(res)
+  })
+  .listen(8080)
+
+export default Server
