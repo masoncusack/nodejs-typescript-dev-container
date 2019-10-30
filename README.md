@@ -1,6 +1,4 @@
-# Node/TS development container
-
-![project logo](./.github/readme-files/logo.png)
+# Node.js + TypeScript development container
 
 A VS Code Dev Container environment for Node.js + Typescript
 
